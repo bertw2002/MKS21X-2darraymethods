@@ -38,9 +38,29 @@ public class ArrayMethods{
     }
     return arr;
   }
-      //Returns an array with the column sum of each column of ary.
-      //When a row is not long enough to reach the column count it as a zero. (NO indexOutOfBounds should ever occur)
-      //Index i of the return array contains the sum of elements in column i, ignoring any rows that are too short.
-      //The length of the returned array should be the length of the LONGEST array in ary.
+
+  public static boolean isRowMagic(int[][] ary){
+    boolean diff = true;
+    int[] arr = allRowSums(ary);
+    for (int x = 0; x < arr.length - 1; x++){
+      if (arr[x] != arr[x + 1]){
+        diff = false;
+      }
+    }
+    return diff;
+  }
+
+  public static boolean isColumnMagic(int[][] ary){
+    boolean diff = true;
+    int[] arr = allColSums(ary);
+    for (int x= 0; x < ary.length - 1;x++){
+      if (arr[x] != arr[x + 1]){
+        diff = false;
+      }
+    }
+    return diff;
+  }
+   //checks if the array is column-magic (this means that every column has the same column sum).
+
 
 }
