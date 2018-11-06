@@ -1,6 +1,9 @@
 public class ArrayMethods{
   public static int rowSum(int[][] ary, int x){
     int var = 0;
+    if (x >= ary.length || x < 0){
+      return 0;
+    }
     int[] newarr = ary[x];
     for (int y = 0; y < newarr.length;y++){
       var += newarr[y];
@@ -60,7 +63,7 @@ public class ArrayMethods{
     }
     return diff;
   }
-   //checks if the array is column-magic (this means that every column has the same column sum).
+
 
 
 }
